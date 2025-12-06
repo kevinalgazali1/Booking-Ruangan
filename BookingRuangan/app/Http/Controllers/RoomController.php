@@ -55,6 +55,18 @@ class RoomController extends Controller
         return redirect()->back()->with('success', 'Ruangan berhasil diperbarui!');
     }
 
+    public function destroy($id)
+    {
+        // Cari data ruangan berdasarkan ID
+        $room = Room::findOrFail($id);
+
+        // Hapus data ruangan
+        $room->delete();
+
+        // Redirect dengan notifikasi sukses
+        return redirect()->back()->with('success', 'Ruangan berhasil dihapus!');
+    }
+
 
     public function jamTerpakai(Request $request)
     {

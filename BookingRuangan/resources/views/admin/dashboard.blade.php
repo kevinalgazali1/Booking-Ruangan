@@ -55,22 +55,16 @@
                                             <span>✏️</span>
                                             <span>Edit</span>
                                         </button>
-                                        <form action="{{ route('rooms.destroy', $room->id) }}" method="POST"
-                                            onsubmit="return confirm('Hapus ruangan ini?')">
+                                        <form id="deleteForm{{ $room->id }}"
+                                            action="{{ route('rooms.destroy', $room->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <form id="deleteForm{{ $room->id }}"
-                                                action="{{ route('rooms.destroy', $room->id) }}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                            </form>
-
                                             <button type="button" onclick="confirmDelete({{ $room->id }})"
                                                 class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition font-medium flex items-center gap-1">
                                                 🗑️ Hapus
                                             </button>
-
                                         </form>
+
                                     </div>
                                 </td>
                             </tr>
