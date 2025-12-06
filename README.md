@@ -1,4 +1,4 @@
-# 📘 BookingRuangan – Room Booking System (Laravel + Breeze)
+# 📘 RoomHub – Room Booking System (Laravel + Breeze)
 
 Aplikasi manajemen pemesanan ruangan dengan autentikasi berbasis Laravel Breeze, mendukung dua role utama: **Admin** dan **User**. Admin dapat mengelola ruangan serta menyetujui/menolak booking, sedangkan User dapat melakukan booking dan melihat statusnya.
 
