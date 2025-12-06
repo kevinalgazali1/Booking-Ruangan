@@ -62,12 +62,15 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div class="min-h-screen z-100">
-        @include('layouts.navigation')
+    <div class="min-h-screen relative">
+        <!-- Navigation dengan z-index tertinggi -->
+        <div class="relative z-50">
+            @include('layouts.navigation')
+        </div>
 
         <!-- Page Heading -->
         @isset($header)
-            <header class="glass-effect shadow-lg mx-4 mt-4 rounded-2xl">
+            <header class="glass-effect shadow-lg mx-4 mt-4 rounded-2xl relative z-10">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     {{ $header }}
                 </div>
@@ -75,7 +78,7 @@
         @endisset
 
         <!-- Page Content -->
-        <main class="py-6 z-0">
+        <main class="py-6 relative z-0">
             {{ $slot }}
         </main>
     </div>

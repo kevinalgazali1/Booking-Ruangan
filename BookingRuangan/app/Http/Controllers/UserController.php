@@ -14,7 +14,7 @@ class UserController extends Controller
     public function index()
     {
         // Ambil semua ruangan beserta relasi booking
-        $rooms = Room::with('booking')->get();
+        $rooms = Room::with('booking')->paginate(6);
 
         // Tampilkan halaman dashboard user
         return view('user.dashboard', compact('rooms'));
